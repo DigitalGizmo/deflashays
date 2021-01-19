@@ -1,0 +1,19 @@
+# extensions
+*.pyc
+*.log
+*.jpg
+*.png
+*.gif
+*.m4a
+
+# files
+.DS_Store
+robots.txt
+# directories
+images/
+common/images/
+scenes/images/
+**/.sass-cache
+**/.sass-cache/*
+
+# allow
