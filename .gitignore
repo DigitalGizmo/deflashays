@@ -5,6 +5,7 @@
 *.png
 *.gif
 *.m4a
+*.LCK
 
 # files
 .DS_Store
