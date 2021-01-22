@@ -7,27 +7,15 @@
 <title>Shays' Rebellion - Scene: War&#39;s End</title>
 <link href="../common/styles.css" rel="stylesheet" type="text/css" media="screen" />
 <link href="../common/styles_print.css" rel="stylesheet" type="text/css" media="print" />
+<!-- <link href="../common/1704_html5_scenes.css" rel="stylesheet" type="text/css" media="print" /> -->
 <!--[if IE]>
 <link href="/common/styles_ie.css" rel="stylesheet" type="text/css" media="screen" />
 <![endif]-->
 <script language="JavaScript" type="text/javascript" src="../common/scripts.js"></script>
-<!-- for Flash -->
-<script language="javascript"> AC_FL_RunContent = 0; </script>
-<script language="javascript"> DetectFlashVer = 0; </script>
-<!-- <script src="../common/AC_RunActiveContent.js" language="javascript"></script> -->
-<script language="JavaScript" type="text/javascript">
-<!--
-// -----------------------------------------------------------------------------
-// Globals
-// Major version of Flash required
-var requiredMajorVersion = 6;
-// Minor version of Flash required
-var requiredMinorVersion = 0;
-// Revision of Flash required
-var requiredRevision = 79;
-// -----------------------------------------------------------------------------
-// -->
-</script>
+<!-- for Flash -- gone -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
 
 <style type="text/css" media="screen">
   /* styles for HTML5 interactive scenes */
@@ -47,9 +35,95 @@ var requiredRevision = 79;
   .scene-wrapper {
     max-width: 930px;
     overflow: auto;
-    background-image: url("../scenes/html5images/bkgrnd_sand.jpg");
+    /*background-image: url("../scenes/html5images/bkgrnd_sand.jpg");*/
   }
- 
+
+  .scene-image  {
+    float: left;
+    padding: 1px;
+    width: 70%;
+  }
+
+  .scene-image img {
+    max-width: 100%;
+  }
+
+  .scene-text {
+    float: right;
+    padding: 3px;
+    width: 29%;
+  }
+
+  @media screen and (max-width: 890px) {
+    .scene-text {
+      padding: 1px;
+    }
+  }
+
+  .tabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tabs li {
+    display: inline;
+  }
+
+  @media screen and (max-width: 890px) {
+    .tabs li a img {
+      width: 36px;
+    }
+  }
+
+  img.tab-selected {
+    margin-bottom: -5px;
+  }
+
+  .no-pointer {
+    cursor: default;
+  }
+
+  .tab-text {
+    background-color: #F7F6E6;
+    border-right: 1px solid #B79A6B;
+    border-left: 1px solid #B79A6B;
+    border-bottom: 1px solid #B79A6B;
+    height: 436px;
+    overflow-y: scroll;
+    padding: 0.25em;
+  }
+
+  .tab-text h3  {
+    color: #330000;
+  }
+  
+  /* hotspots */
+  .hotspot {
+    fill: #FFF;
+    fill-opacity: 0.0;
+  }
+  .hotspoton {
+    fill: #CC3333;
+    fill-opacity: 0.35;
+  }
+
+  /* spotlights/masks */
+  .tab-mask {
+    fill: #000;
+    fill-opacity: 0.7;
+  }
+
+  /* hotspot text */
+  .roll-text {
+    border: 1px solid #B79A6B;
+    color: #660000;
+    height: 60px;
+    margin-bottom: 3px;
+    padding: 0.25em;
+  }
+
+
 </style>
 
 </head>
@@ -74,66 +148,225 @@ var requiredRevision = 79;
     <!-- /logic:present -->
   </ul>
 </div><!-- end mainnav div -->
-<br clear="left" />
+  <br clear="left" />
 
-<h1>Historic Scenes</h1>
+  <h1>Historic Scenes</h1>
 
-<div id="subnav">
-  <ul>
-        <li class="first"><a href='/shaysapp/scene.do?shortName=Prologue'>Prologue</a></li>
+  <div id="subnav">
+    <ul>
+          <li class="first"><a href='/shaysapp/scene.do?shortName=Prologue'>Prologue</a></li>
+        
+          <li class="selected" >War's End</li>
+          <li ><a href='/shaysapp/scene.do?shortName=Petition'>Petition &amp; Protest</a></li>
+          <li ><a href='/shaysapp/scene.do?shortName=Arsenal'>Bloody Encounter</a></li>
+          <li ><a href='/shaysapp/scene.do?shortName=Oath'>Taking the Oath</a></li>
+          <li ><a href='/shaysapp/scene.do?shortName=Nation'>Making a Nation</a></li>
+          <li ><a href='/shaysapp/scene.do?shortName=Epilogue'>Epilogue</a></li>
+    </ul>
+  </div><!-- end sub nav div -->
+
+
+  <div id="buffpage" class="scene">
+
+  <h2>War&#39;s End: 
+    <span class="scene_subtitle">The Promises of the American Revolution</span></h2>
+  <p class="blurb">As the long war drew to a close, Americans looked forward to the freedom and prosperity they believed peace and independence would bring.</p>
+
+  <!-- begin interactive section -->
+  <div 
+    id="scene-app" 
+    class="scene-wrapper"
+  >
+    <div class="scene-image">
       
-        <li class="selected" >War's End</li>
-        <li ><a href='/shaysapp/scene.do?shortName=Petition'>Petition &amp; Protest</a></li>
-        <li ><a href='/shaysapp/scene.do?shortName=Arsenal'>Bloody Encounter</a></li>
-        <li ><a href='/shaysapp/scene.do?shortName=Oath'>Taking the Oath</a></li>
-        <li ><a href='/shaysapp/scene.do?shortName=Nation'>Making a Nation</a></li>
-        <li ><a href='/shaysapp/scene.do?shortName=Epilogue'>Epilogue</a></li>
-  </ul>
-</div><!-- end sub nav div -->
+      <svg 
+        class="no-class" 
+        version="1.1" 
+        xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink" 
+        x="0px" y="0px"
+        viewBox="0 0 2000 1186" 
+        xml:space="preserve">
+      
+        <g>[subtitle goes here. Varies per image?]</g>
+
+        <image 
+          style="overflow:visible;" 
+          width="2000" 
+          height="1186" 
+          :xlink:href="'html5images/' + scene.scenewide.sceneName + '.jpg'"
+          >
+        </image>
+
+        <!-- Outlines -->
+        <g v-if="outlinesOn">
+          <!-- The following loop generates all outlines -->
+          <g v-for="(tab, index) in scene.tabs" :key="index">                 
+            <g
+              v-for="(hotSpot, innerindex) in scene.tabs[index].hotSpots" 
+              :key="hotSpot.rollName">
+              <path 
+                class="outline"
+                :d="hotSpot.svg"
+                />
+            </g>
+          </g> <!-- end for loop -->
+        </g> <!-- end if outlines on -->
+
+        <!-- Hotspots -->
+        <!-- Loop through each tab -->
+        <g v-for="(tab, index) in scene.tabs" :key="index">
+          <!-- Display mask that leaves highlights for a given tab -->
+          <transition name="fade">
+            <g v-if="tabName === tab.tabName">
+              <path 
+                class="tab-mask"
+                :d="tab.maskSvg"
+                />
+            </g>
+          </transition>
+          <!-- Show hotspot for chosen tab, or all for overview -->
+          <g v-if="tabName === tab.tabName || tabName === 'Overview'">
+            <!-- Loop generates hotspots this tab. -->
+            <g
+              v-for="(hotSpot, innerindex) in scene.tabs[index].hotSpots" 
+              :key="hotSpot.rollName">
+              <!-- "Extra" g because v-for can't contain a v-if 
+                Anchor tag will only funciont if spot already highlighte -->
+<!--                   <a 
+                href="#" 
+                class="rollLink"
+                @click.prevent="showRollText"></a>
+-->                    
+                <path 
+                  class="hotspot"
+                  :class="{ hotspoton: rollName === hotSpot.rollName }"
+                  @click.prevent="showRollLink(hotSpot.rollName)"
+                  @mouseover="showPop(hotSpot.rollName)"
+                  @mouseleave="hidePop"
+                  :d="hotSpot.svg"
+                  />
+              <!-- </a> -->
+            </g>
+          </g>
+        </g>
+
+      </svg>
+
+    </div><!-- /scene-image -->
+
+    <article class="scene-text">
+      
+      <!--tabs -->
+      <ul class="tabs">
+        <li 
+          v-for="(tab, index) in scene.tabs" 
+          :key="index"
+        >
+          <!-- Selection and cursor disabeled as needed in js -->
+          <a 
+            href="#" 
+            @click.prevent="showTab(index)"
+            @mouseover="hoverTab(index)"
+            @mouseleave="unHoverTab(index)"
+            :class="cursorState(index)"
+            :title="tab.tabName"
+
+            :class="getTabState(index)"
+            >
+            {{ tab.tabName }}
+          </a>
+        </li>
+      </ul>
+
+      <!--tab text -->
+      <div class="tab-text">
+        <div v-html="tabTexts[tabName][1]">
+      </div>
+
+    </article><!--/scene-text -->
+
+    <div class="scene-related">
+      <!-- Outline and enlarge buttons -->
+      <div class="icons">
+        <a 
+          href="#"
+          :title="outlineToolTip" 
+          @click.prevent="toggleOutlines"
+          @mouseover="outlineHover = true"
+          @mouseleave="outlineHover = false"
+        >
+          <img 
+            :src="'html5images/hotspot_icon' + 
+              outlineSuffix + '.gif'">
+        </a>
+        <a 
+          :href="largerUrl" 
+          target="larger"
+          title="Show large version of picture"
+          @mouseover="iconHover = true"
+          @mouseleave="iconHover = false"
+        >
+          <img 
+            :src="'html5images/enlarge_icon' + 
+              iconSuffix + '.gif'">
+        </a>
+      </div>
+
+      <div class="scene-info-area">
+        <!-- hotspot roll over text area -->
+        <!-- <div v-html='rollText' class="roll-text"></div> -->
+        <div class="roll-text">
+          <p>
+            <span v-html='rollText[0]'></span>
+            <span v-html='rollText[1]'></span>
+          </p>
+          
+        </div> <!-- /roll-text -->
+
+        <!-- Related pop up menus gone -->
+      </div><!--/scene-info-area -->
+    </div><!--/scene-related -->
+
+  </div><!--/#scene-app -->
+  <!-- end interactive section -->
 
 
-<div id="buffpage" class="scene">
+  <!-- begin call to interactive -->
+  <script src="data/War-svg.js" type="text/javascript"></script>
+  <script src="data/War-text.js" type="text/javascript"></script>
+  <script src="../common/scene.js" type="text/javascript"></script>
+  <!-- end dynamic call to interactive -->
 
-<h2>War&#39;s End: 
-  <span class="scene_subtitle">The Promises of the American Revolution</span></h2>
-<p class="blurb">As the long war drew to a close, Americans looked forward to the freedom and prosperity they believed peace and independence would bring.</p>
+  <br />
+  <div id="scene_tool_zone">
 
-<!-- begin interactive section -->
-<div 
-  id="scene-app" 
-  class="scene-wrapper"
->
-  <p>Html 5 scene goes here</p>
+  <div class="scene_tools">
+    <h5>Observers</h5>
+    <ul class="observers">
+    <li>
+    <a href="/scenes/no_observer.html" onclick="javascript:no_observer(); return false" onmouseover="document.friedrich_vonsteuben.src='/scenes/images/obs_friedrich_vonsteuben_f2.gif';" onmouseout="document.friedrich_vonsteuben.src='/scenes/images/obs_friedrich_vonsteuben.gif';"><img src="images/obs_friedrich_vonsteuben.gif" alt="friedrich_vonsteuben | " width="72" height="72" name="friedrich_vonsteuben" border="0"><span><strong>Major General Friedrich Von Steuben</strong>
+    <br>Philadelphia, October, 1783<br>
+    <em>"The soldiers engaged for the war can not on any pretence be retained against their inclination after the proclamation of Peace &ndash;those who desire to retire immediately on their accounts being settled shall receive their discharges and one months pay with Provision to carry them to their States where Officers shall conduct them."</em></span></a>
+    </li>
+    <li>
+    <a href="/shaysapp/person.do?shortName=james_madison" onclick="javascript:person('james_madison'); return false" onmouseover="document.james_madison.src='/scenes/images/obs_james_madison_f2.gif';" onmouseout="document.james_madison.src='/scenes/images/obs_james_madison.gif';"><img src="images/obs_james_madison.gif" alt="james_madison | " width="72" height="72" name="james_madison" border="0"><span><strong>James Madison</strong>
+    <br>April 23, 1783<br>
+    <em>"The resolution permitting the soldiers to retain their arms was passed at the recommendation of Gen'l Washington. The resolution for granting furloughs or discharges was a compromise between those who wished to get rid of the expence of keeping the men in the field, and those who thought it impolitic to disband the army whilst the British remained in the United States."</em> <strong>Click for more info</strong></span></a>
+    </li>
+    <li>
+    <a href="/scenes/no_observer.html" onclick="javascript:no_observer(); return false" onmouseover="document.robert_morris.src='/scenes/images/obs_robert_morris_f2.gif';" onmouseout="document.robert_morris.src='/scenes/images/obs_robert_morris.gif';"><img src="images/obs_robert_morris.gif" alt="robert_morris | " width="72" height="72" name="robert_morris" border="0"><span><strong>Robert Morris to George Washington</strong>
+    <br>May 29, 1783<br>
+    <em>"I shall cause such Notes to be issued for three Months Pay to the Army and I must entreat Sir that every influence be used with the States to absorb them together with my other Engagements by Taxation. The present collections are most shameful and afford but a sad Prospect to all those who are dependent upon them."</em></span></a>
+    </li>
+    <li>
+    <a href="/shaysapp/person.do?shortName=george_washington" onclick="javascript:person('george_washington'); return false" onmouseover="document.george_washington.src='/scenes/images/obs_george_washington_f2.gif';" onmouseout="document.george_washington.src='/scenes/images/obs_george_washington.gif';"><img src="images/obs_george_washington.gif" alt="george_washington | " width="72" height="72" name="george_washington" border="0"><span><strong>General George Washington</strong>
+    <br>Rocky Hill, New Jersey, November 2, 1783 <br>
+    <em>"the Officers and Soldiers may expect considerable assistance in recommencing their civil occupations from the sums due to them from the public, which must and will most inevitably be paid. It is earnestly recommended to all the Troops that&hellip;they should prove themselves not less virtuous and useful as Citizens, than they have been persevering and victorious as Soldiers."</em> <strong>Click for more info</strong></span></a>
+    </li>
+    </ul>
 </div>
 
-<br />
-<div id="scene_tool_zone">
-
-<div class="scene_tools">
-<h5>Observers</h5>
-<ul class="observers">
-<li>
-<a href="/scenes/no_observer.html" onclick="javascript:no_observer(); return false" onmouseover="document.friedrich_vonsteuben.src='/scenes/images/obs_friedrich_vonsteuben_f2.gif';" onmouseout="document.friedrich_vonsteuben.src='/scenes/images/obs_friedrich_vonsteuben.gif';"><img src="images/obs_friedrich_vonsteuben.gif" alt="friedrich_vonsteuben | " width="72" height="72" name="friedrich_vonsteuben" border="0"><span><strong>Major General Friedrich Von Steuben</strong>
-<br>Philadelphia, October, 1783<br>
-<em>"The soldiers engaged for the war can not on any pretence be retained against their inclination after the proclamation of Peace &ndash;those who desire to retire immediately on their accounts being settled shall receive their discharges and one months pay with Provision to carry them to their States where Officers shall conduct them."</em></span></a>
-</li>
-<li>
-<a href="/shaysapp/person.do?shortName=james_madison" onclick="javascript:person('james_madison'); return false" onmouseover="document.james_madison.src='/scenes/images/obs_james_madison_f2.gif';" onmouseout="document.james_madison.src='/scenes/images/obs_james_madison.gif';"><img src="images/obs_james_madison.gif" alt="james_madison | " width="72" height="72" name="james_madison" border="0"><span><strong>James Madison</strong>
-<br>April 23, 1783<br>
-<em>"The resolution permitting the soldiers to retain their arms was passed at the recommendation of Gen'l Washington. The resolution for granting furloughs or discharges was a compromise between those who wished to get rid of the expence of keeping the men in the field, and those who thought it impolitic to disband the army whilst the British remained in the United States."</em> <strong>Click for more info</strong></span></a>
-</li>
-<li>
-<a href="/scenes/no_observer.html" onclick="javascript:no_observer(); return false" onmouseover="document.robert_morris.src='/scenes/images/obs_robert_morris_f2.gif';" onmouseout="document.robert_morris.src='/scenes/images/obs_robert_morris.gif';"><img src="images/obs_robert_morris.gif" alt="robert_morris | " width="72" height="72" name="robert_morris" border="0"><span><strong>Robert Morris to George Washington</strong>
-<br>May 29, 1783<br>
-<em>"I shall cause such Notes to be issued for three Months Pay to the Army and I must entreat Sir that every influence be used with the States to absorb them together with my other Engagements by Taxation. The present collections are most shameful and afford but a sad Prospect to all those who are dependent upon them."</em></span></a>
-</li>
-<li>
-<a href="/shaysapp/person.do?shortName=george_washington" onclick="javascript:person('george_washington'); return false" onmouseover="document.george_washington.src='/scenes/images/obs_george_washington_f2.gif';" onmouseout="document.george_washington.src='/scenes/images/obs_george_washington.gif';"><img src="images/obs_george_washington.gif" alt="george_washington | " width="72" height="72" name="george_washington" border="0"><span><strong>General George Washington</strong>
-<br>Rocky Hill, New Jersey, November 2, 1783 <br>
-<em>"the Officers and Soldiers may expect considerable assistance in recommencing their civil occupations from the sums due to them from the public, which must and will most inevitably be paid. It is earnestly recommended to all the Troops that&hellip;they should prove themselves not less virtuous and useful as Citizens, than they have been persevering and victorious as Soldiers."</em> <strong>Click for more info</strong></span></a>
-</li>
-</ul>
-</div>
 <!--end observers tools--><div class="scene_tools">
 <h5>Themes</h5>
 <ul class="themes">
