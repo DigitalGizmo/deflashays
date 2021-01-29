@@ -11,7 +11,7 @@ const scene = {
       ], // end hotSpots
     }, // end first tab
     {
-      "tabName": "second-tab",
+      "tabName": "English",
       "enabled": true,
       "maskSvg": "",
       "hotSpots": [
@@ -22,7 +22,7 @@ const scene = {
       ], // end hotSpots
     }, // end layer
     {
-      "tabName": "name of third tab",
+      "tabName": "French",
       "enabled": true,
       "maskSvg": "",
       "hotSpots": [
@@ -32,5 +32,38 @@ const scene = {
         },
       ], // end hotSpots
     }, // end layer
-   ], // end tabs
+    {
+      "tabName": "KanienKehaka",
+      "enabled": true,
+      "maskSvg": "",
+      "hotSpots": [
+        {
+          "rollName": "",
+          "svg": ""
+        },
+      ], // end hotSpots
+    }, // end layer
+    {
+      "tabName": "Wendat",
+      "enabled": true,
+      "maskSvg": "",
+      "hotSpots": [
+        {
+          "rollName": "",
+          "svg": ""
+        },
+      ], // end hotSpots
+    }, // end layer
+    {
+      "tabName": "Wobanakiak",
+      "enabled": true,
+      "maskSvg": "",
+      "hotSpots": [
+        {
+          "rollName": "",
+          "svg": ""
+        },
+      ], // end hotSpots
+    }, // end layer
+  ], // end tabs
 } // end data
