@@ -1,6 +1,6 @@
 const scene = {
   "scenewide": {
-    "sceneName": "War",
+    "sceneName": "Petition",
     // RollTexts are in separate .js file
   },
   "tabs": [
