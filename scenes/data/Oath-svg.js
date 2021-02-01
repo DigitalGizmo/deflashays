@@ -7,6 +7,7 @@ const scene = {
     {
       "tabName": "Overview",
       "enabled": true,
+      "maskSvg": "",
       "hotSpots": [
         {
           "rollName": "ink_stand",
