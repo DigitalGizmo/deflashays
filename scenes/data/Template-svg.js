@@ -1,6 +1,6 @@
 const scene = {
   "scenewide": {
-    "sceneName": "",
+    "sceneName": "War",
     // RollTexts are in separate .js file
   },
   "tabs": [
@@ -8,10 +8,26 @@ const scene = {
       "tabName": "Overview",
       "enabled": true,
       "hotSpots": [
-      ], // end hotSpots
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
+      ] // end hotSpots
     }, // end first tab
     {
-      "tabName": "English",
+      "tabName": "Government",
       "enabled": true,
       "maskSvg": "",
       "hotSpots": [
@@ -19,10 +35,38 @@ const scene = {
           "rollName": "",
           "svg": ""
         },
-      ], // end hotSpots
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
+      ] // end hotSpots
     }, // end layer
     {
-      "tabName": "French",
+      "tabName": "Regulators",
       "enabled": true,
       "maskSvg": "",
       "hotSpots": [
@@ -30,35 +74,30 @@ const scene = {
           "rollName": "",
           "svg": ""
         },
-      ], // end hotSpots
-    }, // end layer
-    {
-      "tabName": "KanienKehaka",
-      "enabled": true,
-      "maskSvg": "",
-      "hotSpots": [
         {
           "rollName": "",
           "svg": ""
         },
-      ], // end hotSpots
-    }, // end layer
-    {
-      "tabName": "Wendat",
-      "enabled": true,
-      "maskSvg": "",
-      "hotSpots": [
         {
           "rollName": "",
           "svg": ""
         },
-      ], // end hotSpots
-    }, // end layer
-    {
-      "tabName": "Wobanakiak",
-      "enabled": true,
-      "maskSvg": "",
-      "hotSpots": [
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
+        {
+          "rollName": "",
+          "svg": ""
+        },
         {
           "rollName": "",
           "svg": ""
