@@ -1,6 +1,7 @@
 const scene = {
   "scenewide": {
     "sceneName": "Arsenal",
+    "isMultiImage": true,
     // RollTexts are in separate .js file
   },
   "tabs": [

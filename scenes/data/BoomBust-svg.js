@@ -1,6 +1,9 @@
 const scene = {
   "scenewide": {
+    // sceneName used by image only, 
+    // may be changed by scene.js for multi-image scenes.
     "sceneName": "BoomBust",
+    "isMultiImage": true,
     // RollTexts are in separate .js file
   },
   "tabs": [

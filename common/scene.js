@@ -33,6 +33,9 @@ var sceneApp = new Vue({
     outlineToolTips: ['Show all hot spots in picture',
       'Remove hotspot outlines'],
     iconHover: false,
+    imageName: scene.scenewide.sceneName, // sceneName from svg.js
+    // isMultiImage: true, -- must be declared in *-svj.js
+    subTitle: subTitle,
     // relatedUp: [false, false, false, false],
     // relatedMenuTitles: ['People', 'Artifacts', 'Explanations', 'Maps'],
     // relatedMenuKeys: ['people', 'artifacts', 'background', 'maps'],
@@ -43,13 +46,18 @@ var sceneApp = new Vue({
   methods: {
     // -------------- TABS ----------------
     showTab: function(_tabIndex) {
-      // console.log(' -- showPop')
-      // Only if enabled
-      if (this.scene.tabs[_tabIndex].enabled) {
-        this.tabIndex = _tabIndex
-        this.tabName = this.scene.tabs[_tabIndex].tabName
-        // this.tabText = tabTexts[this.tabName]
+      // 1704 had "if enabled", but in Shays all allways shown
+      this.tabIndex = _tabIndex
+      this.tabName = this.scene.tabs[_tabIndex].tabName
+      if (this.scene.scenewide.isMultiImage) {
+        // Leaving Overview image without a suffix simplifies initiation.
+        if (this.tabName === 'Overview') {
+          this.imageName = this.scene.scenewide.sceneName
+        } else {
+          this.imageName = this.scene.scenewide.sceneName + "-" + this.tabName 
+        }
       }
+      // this.tabText = tabTexts[this.tabName]
     },
     // Determine tab state
     getTabSuffix: function(_tabIndex) {
