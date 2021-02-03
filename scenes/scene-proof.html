@@ -45,7 +45,6 @@
   <div id="subnav">
     <ul>
           <li class="first"><a href='/shaysapp/scene.do?shortName=Prologue'>Prologue</a></li>
-        
           <li class="selected" >War's End</li>
           <li ><a href='/shaysapp/scene.do?shortName=Petition'>Petition &amp; Protest</a></li>
           <li ><a href='/shaysapp/scene.do?shortName=Arsenal'>Bloody Encounter</a></li>
@@ -58,18 +57,14 @@
 
   <div id="buffpage" class="scene">
 
-  <h2>War&#39;s End: 
-    <span class="scene_subtitle">The Promises of the American Revolution</span></h2>
+  <h2>War&#39;s End: <span class="scene_subtitle">The Promises of the American Revolution</span></h2>
   <p class="blurb">As the long war drew to a close, Americans looked forward to the freedom and prosperity they believed peace and independence would bring.</p>
 
   <!-- begin interactive section -->
-  <div 
-    id="scene-app" 
-    class="scene-wrapper"
-  >
+  <div id="scene-app" class="scene-wrapper">
     <div class="scene-image">
       
-      <p v-html="subTitle"></p>
+      <h4 v-html="subTitle"></h4>
       <svg 
         class="no-class" 
         version="1.1" 
@@ -176,6 +171,7 @@
 
     </article><!--/scene-text -->
 
+
     <div class="scene-related">
       <!-- Outline and enlarge buttons -->
       <div class="icons">
@@ -207,10 +203,8 @@
         <!-- hotspot roll over text area -->
         <!-- <div v-html='rollText' class="roll-text"></div> -->
         <div class="roll-text">
-          <p>
             <span v-html='rollText[0]'></span>
             <span v-html='rollText[1]'></span>
-          </p>
           
         </div> <!-- /roll-text -->
 
@@ -223,8 +217,8 @@
 
 
   <!-- begin call to interactive -->
-  <script src="data/Arsenal-svg.js" type="text/javascript"></script>
-  <script src="data/Arsenal-text.js" type="text/javascript"></script>
+  <script src="data/War-svg.js" type="text/javascript"></script>
+  <script src="data/War-text.js" type="text/javascript"></script>
   <script src="../common/scene.js" type="text/javascript"></script>
   <!-- end dynamic call to interactive -->
 

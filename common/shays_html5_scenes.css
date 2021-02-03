@@ -13,7 +13,7 @@
 }
 
 .scene-wrapper {
-	max-width: 930px;
+	/*max-width: 930px;*/
 	overflow: auto;
 	/*background-image: url("../scenes/html5images/bkgrnd_sand.jpg");*/
 }
@@ -40,6 +40,14 @@
 	}
 }
 
+.scene-info-area {
+	margin-left: 15%;
+}
+
+.scene-image h4 {
+	margin: 0;
+}
+
 .tabs	{
 	list-style-type: none;
 	margin: 0;
@@ -48,34 +56,69 @@
 
 .tabs li {
 	display: inline;
+	font-variant: small-caps;
+	font-weight: bold;
+	letter-spacing: 0.15em;
+	margin-right: .25em;
 }
 
-@media screen and (max-width: 890px) {
-	.tabs li a img {
-		width: 36px;
-	}
+.tabs li a {
+	background-color: #F7F6E6;
+	padding: 0 1em .3em 1em;
+	border-right: 1px solid #B79A6B;
+	border-left: 1px solid #B79A6B;
+	border-top: 1px solid #B79A6B;
+	border-radius: 2px;
 }
 
-img.tab-selected {
-	margin-bottom: -5px;
+#buffpage ul.tabs li a:link {
+	text-decoration: none;
+}
+
+#buffpage ul.tabs li a.pointer {
+	background-color: #e6ddc2;
 }
 
 .no-pointer {
+	border-bottom: 1px solid #F7F6E6;
 	cursor: default;
+	position: relative;
+	z-index: 1;
 }
 
 .tab-text {
 	background-color: #F7F6E6;
-	border-right: 1px solid #B79A6B;
-	border-left: 1px solid #B79A6B;
-	border-bottom: 1px solid #B79A6B;
-	height: 436px;
+	border: 1px solid #B79A6B;
+	border-radius: 2px;
+	height: 408px;
 	overflow-y: scroll;
-	padding: 0.25em;
+	padding: 0.75em;
 }
 
 .tab-text h3	{
 	color: #330000;
+}
+
+/* info below image */
+.scene-related {
+	clear: left;
+	padding: 3px;
+	width: 70%;
+}
+
+.icons {
+	float: left;
+	width: 15%;
+}
+
+.icons p {
+	color: #660000;
+	font-variant: small-caps;
+	font-weight: bold;
+	letter-spacing: 0.05em;
+	line-height: 1em;
+	text-align: right;
+	padding-top: 1.25em;
 }
 
 /* hotspots */
@@ -97,10 +140,10 @@ img.tab-selected {
 /* hotspot text */
 .roll-text {
 	border: 1px solid #B79A6B;
-	color: #660000;
-	height: 60px;
-	margin-bottom: 3px;
-	padding: 0.25em;
+	border-radius: 2px;
+	color: ;
+	height: 40px;
+	padding: 0.5em;
 }
 
 /* for View Larger Illustration */

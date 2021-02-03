@@ -1,0 +1,108 @@
+<style type="text/css" media="screen">
+  /* styles for HTML5 interactive scenes */
+  #scene-app {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 10px;
+  }
+
+  #scene-app a:link, #scene-app a:visited {
+    color: #660000;
+  }
+
+  #scene-app a:hover, #scene-app a:active {
+    color: brown;
+  }
+
+  .scene-wrapper {
+    max-width: 930px;
+    overflow: auto;
+    /*background-image: url("../scenes/html5images/bkgrnd_sand.jpg");*/
+  }
+
+  .scene-image  {
+    float: left;
+    padding: 1px;
+    width: 70%;
+  }
+
+  .scene-image img {
+    max-width: 100%;
+  }
+
+  .scene-text {
+    float: right;
+    padding: 3px;
+    width: 29%;
+  }
+
+  @media screen and (max-width: 890px) {
+    .scene-text {
+      padding: 1px;
+    }
+  }
+
+  .tabs {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .tabs li {
+    display: inline;
+  }
+
+  @media screen and (max-width: 890px) {
+    .tabs li a img {
+      width: 36px;
+    }
+  }
+
+  img.tab-selected {
+    margin-bottom: -5px;
+  }
+
+  .no-pointer {
+    cursor: default;
+  }
+
+  .tab-text {
+    background-color: #F7F6E6;
+    border-right: 1px solid #B79A6B;
+    border-left: 1px solid #B79A6B;
+    border-bottom: 1px solid #B79A6B;
+    height: 436px;
+    overflow-y: scroll;
+    padding: 0.25em;
+  }
+
+  .tab-text h3  {
+    color: #330000;
+  }
+  
+  /* hotspots */
+  .hotspot {
+    fill: #FFF;
+    fill-opacity: 0.0;
+  }
+  .hotspoton {
+    fill: #CC3333;
+    fill-opacity: 0.35;
+  }
+
+  /* spotlights/masks */
+  .tab-mask {
+    fill: #000;
+    fill-opacity: 0.7;
+  }
+
+  /* hotspot text */
+  .roll-text {
+    border: 1px solid #B79A6B;
+    color: #660000;
+    height: 60px;
+    margin-bottom: 3px;
+    padding: 0.25em;
+  }
+
+
+</style>
