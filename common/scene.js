@@ -24,7 +24,8 @@ var sceneApp = new Vue({
     tabHovers: [false, false, false, false, false, false],
     rollTexts: rollTexts,
     rollName: 'none',
-    rollText: 'Hover or tap to explore the image above.',
+    // rollText in two parts to match data
+    rollText: ['Hover', 'or tap to explore the image above.'], 
     rollLinks: rollLinks,
     rollJustShown: 'noneYet',
     // related: related,

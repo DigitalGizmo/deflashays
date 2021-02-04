@@ -150,6 +150,7 @@
         >
           <!-- Selection and cursor disabeled as needed in js -->
           <a 
+            v-html="tab.tabName"
             href="#" 
             @click.prevent="showTab(index)"
             @mouseover="hoverTab(index)"
@@ -158,9 +159,7 @@
             :title="tab.tabName"
 
             :class="getTabState(index)"
-            >
-            {{ tab.tabName }}
-          </a>
+            ></a>
         </li>
       </ul>
 
