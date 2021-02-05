@@ -64,7 +64,7 @@
 
 .tabs li a {
 	background-color: #F7F6E6;
-	padding: 0 1em .3em 1em;
+	padding: 0 1em .3em 0.25em;
 	border-right: 1px solid #B79A6B;
 	border-left: 1px solid #B79A6B;
 	border-top: 1px solid #B79A6B;
@@ -142,7 +142,7 @@
 	border: 1px solid #B79A6B;
 	border-radius: 2px;
 	color: ;
-	height: 40px;
+	height: 60px;
 	padding: 0.5em;
 }
 
