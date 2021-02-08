@@ -189,7 +189,7 @@ var sceneApp = new Vue({
   },
   computed: {
     largerUrl: function() {
-      return "illustrations/" + this.scene.scenewide.sceneName + ".html"
+      return "/scenes/lg_view/" + this.scene.scenewide.sceneName + ".html"
     },
     outlineSuffix: function() {
       if (this.outlineHover) {
