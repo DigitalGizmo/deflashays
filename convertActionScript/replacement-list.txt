@@ -1,0 +1,38 @@
+old ~ new
+
+\u0022 ~ &quot;
+<font color="#660000"><u> ~ <strong>
+</u></font> ~ </strong>
+
+<a href="asfunction:relatedLink,people|Atiwans|Parting">
+<a href="javascript:openLink(\'people\',\'Hertel\',\'Parting\')">
+
+<a href="asfunction:relatedLink,people|Atiwans|Parting">
+<a class="related-link" href="people/Atiwans/Parting">
+
+<a href="javascript:openLink(\'maps\',\'march\',\'\')">Connecticut River</a>
+<a class="open-link" href="\'maps\'/\'march\'/\'\'">Connecticut River</a>
+
+<a href="javascript:openLink( ~ <a class="open-link" href="
+\')">  ~ \'">
+\',\' ~ \'/\'
+
+"</a><br><a" : "</a>', '<a"
+
+'<a href="asfunction:relatedLink,' : '<a class="related-link" href="'
+
+In sublime, by hand:
+= \[\d+, ' 
+= ['
+
+
+[9, 
+[
+
+  related["people"] = [9, ' <a href="asfunction:relatedLink,people|Atiwans|Parting">Atiwans</a><br><a href="asfunction:relatedLink,people|Hoyt|Parting">Jonathan Hoyt</a><br><a href="asfunction:relatedLink,people|Thaonwentsawakon|Parting">Thaonwentsawakon</a><br><a href="asfunction:relatedLink,people|Tsohahisen|Parting">Tsohahisen</a><br><a href="asfunction:relatedLink,people|Hertel|Parting">Hertel de Rouville</a><br><a href="asfunction:relatedLink,people|Wattanummon|Parting">Wattanummon</a><br><a href="asfunction:relatedLink,people|EuniceKWilliams|Parting">Eunice Williams</a><br><a href="asfunction:relatedLink,people|JohnWilliams|Parting">Reverend John Williams</a><br><a href="asfunction:relatedLink,people|StephenWilliams|Parting">Stephen Williams</a><br>'];
+
+  related["people"] = [
+    ['people|Atiwans|Parting','Atiwans'],
+    ['people|Hoyt|Parting', 'Jonathan Hoyt'],
+    ]
+    '><a href="asfunction:relatedLink,people|Thaonwentsawakon|Parting">Thaonwentsawakon</a><br><a href="asfunction:relatedLink,people|Tsohahisen|Parting">Tsohahisen</a><br><a href="asfunction:relatedLink,people|Hertel|Parting">Hertel de Rouville</a><br><a href="asfunction:relatedLink,people|Wattanummon|Parting">Wattanummon</a><br><a href="asfunction:relatedLink,people|EuniceKWilliams|Parting">Eunice Williams</a><br><a href="asfunction:relatedLink,people|JohnWilliams|Parting">Reverend John Williams</a><br><a href="asfunction:relatedLink,people|StephenWilliams|Parting">Stephen Williams</a><br>'];
