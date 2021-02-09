@@ -14,8 +14,9 @@ in this case:
 
 ```
 cd ~/Documents/01-Projects/Wk-DeFlash-Shays/convertActionScript/scenes
+cd ~/Sites/gizmo_dev2/deflashays/convertActionScript/scenes
 ⁩
-../replace-scene.py War
+../replace-scene-mid.py War
 ```
 
 In sublime, by hand:

@@ -12,8 +12,8 @@ fileToSearch = open(fileName + ".as", "rt")
 
 #output file to write the result to
 # fout = open("Parting-text.js", "wt")
-print ("Output will be " + fileName + "-text.js")
-fout = open(fileName + "-text.js", "wt")
+print ("Output will be " + fileName + "-text-mid.js")
+fout = open(fileName + "-text-mid.js", "wt")
 
 # the simplest, lambda-based implementation
 def multiple_replace(adict, text):
@@ -28,19 +28,26 @@ adict = {
   "tabTexts  = new Object();" : "const tabTexts  = {};",
   "rollTexts = new Object();" : "const rollTexts  = {};",
   "rollLinks = new Object();" : "const rollLinks  = {};",
-  "related   = new Object();" : "const related  = {};",
-  '"Intro"' : '"Overview"',
+  "  tabTexts" : "tabTexts",
+  "  rollTexts" : "rollTexts",
+  "    rollTexts" : "rollTexts",
   '<font color="#660000"><u>' : '',
   '</u></font>' : '',
-  '<a href="javascript:openLink(\\\'' : '<a class="open-link" href="',
-  '\\\')">' : '">',
-  "\\\',\\\'" : "/",
-  # r'\d+' : "~",
-  '<a href="asfunction:relatedLink,' : '<a class="open-link" href="',
-  "</a><br>']" : "</a>']",
-  "</a><br>" : "</a>', '",
-  "</p><br><p>" : "</p><p>",
-  "|" : "/",
+  # remove escaped single quote in links
+  "(\\\'" : "('",
+  "\\\')" : "')",
+  # remove unicode
+  "\\u0022" : "&quot;",
+
+  # '<a href="javascript:openLink(\\\'' : '<a class="open-link" href="',
+  # '\\\')">' : '">',
+  # "\\\',\\\'" : "/",
+  # # r'\d+' : "~",
+  # '<a href="asfunction:relatedLink,' : '<a class="open-link" href="',
+  # "</a><br>']" : "</a>']",
+  # "</a><br>" : "</a>', '",
+  # "</p><br><p>" : "</p><p>",
+  # "|" : "/",
   # In sublime, regular expression by hand:
   # = \[\d+, ' 
   # = ['
