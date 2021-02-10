@@ -8,8 +8,31 @@ document.addEventListener('click', function (event) {
   // console.log("- hrefs[0]: " + hrefs[0]);
   // Forward
   // openLink(linkType, shortName, anchorName)
-  openLink(hrefs[0], hrefs[1], hrefs[2])
+  // openLink patterned after 1704. Shays doesn't the anchor param
+  openLink(hrefs[0], hrefs[1])
 }, false);
+
+function openLink(linkType, shortName) {
+  switch(linkType) {
+    case "glossary":
+      glossary(shortName);
+      break;
+    case "person":
+      person(shortName);
+      break;
+    case "artifact":
+      artifact(shortName);
+      break;
+    case "map":
+      map(shortName);
+      break;
+    case "music":
+      music(shortName);
+      break;
+    default:
+      console.log("Must have missed a link type.");
+  }
+}
 
 // Scene Vue app
 var sceneApp = new Vue({
@@ -118,8 +141,8 @@ var sceneApp = new Vue({
     },
     // Called by desk click or mobile tap
     showRollLink: function(_rollName) {
-      console.log(" - pre-condition rollName: " + this.rollName +
-        " rollJustShown: " + this.rollJustShown)
+      // console.log(" - pre-condition rollName: " + this.rollName +
+        // " rollJustShown: " + this.rollJustShown)
       // Need make sure hotspot is already showing
       // in order to handle second tap on mobile
       if (_rollName === this.rollJustShown) { 
@@ -146,7 +169,7 @@ var sceneApp = new Vue({
         sceneApp.rollJustShown = _rollName
         // console.log(' -- showPop rollJustShown after: ' + 
         //   sceneApp.rollJustShown)
-      }, 1000);      
+      }, 800);      
     },
     hidePop: function() {
       this.rollText = ''

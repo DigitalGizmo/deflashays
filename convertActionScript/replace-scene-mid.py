@@ -24,7 +24,7 @@ def multiple_replace(adict, text):
   return regex.sub(lambda match: adict[match.group(0)], text)
 
 adict = {
-  "var displayTitle" : "const displayTitle",
+  "var subTitle" : "const subTitle",
   "tabTexts  = new Object();" : "const tabTexts  = {};",
   "rollTexts = new Object();" : "const rollTexts  = {};",
   "rollLinks = new Object();" : "const rollLinks  = {};",
@@ -34,8 +34,8 @@ adict = {
   '<font color="#660000"><u>' : '',
   '</u></font>' : '',
   # remove escaped single quote in links
-  "(\\\'" : "('",
-  "\\\')" : "')",
+  "(\\\'" : "(~",
+  "\\\')" : "~)",
   # remove unicode
   "\\u0022" : "&quot;",
 

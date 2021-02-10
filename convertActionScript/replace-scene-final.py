@@ -7,13 +7,13 @@ import re
 print (".as File to perform Search-Replace on:")
 # fileToSearch  = input( "> " )
 fileName = sys.argv[1]
-print ("fileName: " + fileName)
-fileToSearch = open(fileName + ".as", "rt")
+print ("fileName: " + fileName + "-text-mid.js")
+fileToSearch = open(fileName + "-text-mid.js", "rt")
 
 #output file to write the result to
 # fout = open("Parting-text.js", "wt")
-print ("Output will be " + fileName + "-text-mid.js")
-fout = open(fileName + "-text-mid.js", "wt")
+print ("Output will be ../../scenes/data/" + fileName + "-text.js")
+fout = open("../../scenes/data/" + fileName + "-text.js", "wt")
 
 # the simplest, lambda-based implementation
 def multiple_replace(adict, text):
@@ -24,33 +24,18 @@ def multiple_replace(adict, text):
   return regex.sub(lambda match: adict[match.group(0)], text)
 
 adict = {
-  "var displayTitle" : "const displayTitle",
-  "tabTexts  = new Object();" : "const tabTexts  = {};",
-  "rollTexts = new Object();" : "const rollTexts  = {};",
-  "rollLinks = new Object();" : "const rollLinks  = {};",
-  "  tabTexts" : "tabTexts",
-  "  rollTexts" : "rollTexts",
-  "    rollTexts" : "rollTexts",
-  '<font color="#660000"><u>' : '',
-  '</u></font>' : '',
-  # remove escaped single quote in links
-  "(\\\'" : "('",
-  "\\\')" : "')",
-  # remove unicode
-  "\\u0022" : "&quot;",
+  # Remove escaped single quotes, now the we've gotten rid to the
+  # ones around parameters.
+  "\\\'" : "&apos;",
 
-  # '<a href="javascript:openLink(\\\'' : '<a class="open-link" href="',
-  # '\\\')">' : '">',
-  # "\\\',\\\'" : "/",
-  # # r'\d+' : "~",
-  # '<a href="asfunction:relatedLink,' : '<a class="open-link" href="',
-  # "</a><br>']" : "</a>']",
-  # "</a><br>" : "</a>', '",
-  # "</p><br><p>" : "</p><p>",
-  # "|" : "/",
-  # In sublime, regular expression by hand:
-  # = \[\d+, ' 
-  # = ['
+  # Want to yield e.g.: <a class="open-link" href="glossary/snow">
+  '<a href="javascript:glossary(~' : '<a class="open-link" href="glossary/',
+  '<a href="javascript:person(~' : '<a class="open-link" href="person/',
+  '<a href="javascript:artifact(~' : '<a class="open-link" href="artifact/',
+  '<a href="javascript:map(~' : '<a class="open-link" href="map/',
+  '<a href="javascript:music(~' : '<a class="open-link" href="music/',
+  # Replace href ending
+  '~)' : ''
 }
 
 #for each line in the input file
