@@ -58,28 +58,40 @@ var sceneApp = new Vue({
       'Remove hotspot outlines'],
     iconHover: false,
     imageName: scene.scenewide.sceneName, // sceneName from svg.js
-    // isMultiImage: true, -- must be declared in *-svj.js
+    isMultiImage: scene.scenewide.isMultiImage,
+    // The following to handle multiImage overview exception
+    isShowAllOverview: true,
     subTitle: subTitle,
-    // relatedUp: [false, false, false, false],
-    // relatedMenuTitles: ['People', 'Artifacts', 'Explanations', 'Maps'],
-    // relatedMenuKeys: ['people', 'artifacts', 'background', 'maps'],
   },
-  // created () {
-  //   this.tabText = tabTexts[this.tabName]
-  // },
+  mounted () {
+    // This will set isShowAllOverview appropriately
+    this.showTab(0)
+  },
   methods: {
     // -------------- TABS ----------------
     showTab: function(_tabIndex) {
       // 1704 had "if enabled", but in Shays all allways shown
       this.tabIndex = _tabIndex
       this.tabName = this.scene.tabs[_tabIndex].tabName
-      if (this.scene.scenewide.isMultiImage) {
+      if (this.tabName != 'Overview') {
+        // Need to limit true possibility to only Overview
+        this.isShowAllOverview = false
+      }
+      if (this.isMultiImage) {
+        // Handle image and svg condition    
         // Leaving Overview image without a suffix simplifies initiation.
         if (this.tabName === 'Overview') {
           this.imageName = this.scene.scenewide.sceneName
+          // tab name is overview and this is a mulit image
+          this.isShowAllOverview = false
         } else {
           this.imageName = this.scene.scenewide.sceneName + "-" + this.tabName 
         }
+      } else { // not multiImage
+        if (this.tabName === 'Overview') {
+          // tab name is overview and this is not mulit image
+          this.isShowAllOverview = true
+        } 
       }
       // this.tabText = tabTexts[this.tabName]
     },
@@ -184,31 +196,6 @@ var sceneApp = new Vue({
       }
       sceneApp.$forceUpdate();
     }
-    // ------- RELATED LINKS -------------
-  //   toggleRelated: function(relatedIndex) {
-  //     if (this.relatedUp[relatedIndex]) { // this one is on
-  //       this.relatedUp[relatedIndex] = false
-  //     } else { // we're turning this one on
-  //       this.closeAllRelated()
-  //       this.relatedUp[relatedIndex] = true  
-  //     }
-  //     sceneApp.$forceUpdate();
-  //   },
-  //   closeAllRelated: function() {
-  //     console.log(" -- closing AllRelated")
-  //     // Use ES5 for-loop -- prob to retain "this"
-  //     for (let i = 0; i < this.relatedUp.length; i++) {
-  //       this.relatedUp[i] = false
-  //     }
-  //     sceneApp.$forceUpdate();
-  //   },
-  //   closeRelatedIfOut: function(event) {
-  //     // For mobile: no mouse leave so close related menu
-  //     // unless click was on a related link.
-  //     if (!event.target.matches('.related-link')) {
-  //       this.closeAllRelated()
-  //     }
-  //   },
   },
   computed: {
     largerUrl: function() {
